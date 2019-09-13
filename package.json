@@ -1,6 +1,6 @@
 {
   "name": "testcafe-reporter-dhx-spec-reporter",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "dhx-spec-reporter TestCafe reporter plugin.",
   "repository": "https://github.com/Ub1que/testcafe-reporter-dhx-spec-reporter",
   "author": {

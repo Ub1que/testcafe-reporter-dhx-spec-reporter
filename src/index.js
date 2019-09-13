@@ -53,6 +53,7 @@ module.exports = function () {
             var hasErr    = !!testRunInfo.errs.length;
             var symbol    = null;
             var nameStyle = null;
+            var screenshotSymbol = '';
 
             if (testRunInfo.skipped) {
                 this.skipped++;
@@ -71,16 +72,16 @@ module.exports = function () {
                 nameStyle = this.chalk.grey;
             }
 
-            var title = `${symbol} ${nameStyle(name)}`;
+            if (testRunInfo.screenshotPath)
+                screenshotSymbol = this.chalk.yellow(' [s]');
+
+            var title = `${symbol}${screenshotSymbol} ${nameStyle(name)}`;
 
             this.setIndent(1)
                 .useWordWrap(true);
 
             if (testRunInfo.unstable)
                 title += this.chalk.yellow(' (unstable)');
-
-            if (testRunInfo.screenshotPath)
-                title += ' (screenshots)';
 
             this.write(title);
 
